@@ -28,7 +28,7 @@ def astest():
     arcsin(x)
 
     # what is this test doing
-    print(f"testing arcsin({x})...")
+    print(f"Testing arcsin({x})...")
 
     # expected output
     expected = np.asin(x)
@@ -38,7 +38,7 @@ def astest():
 
     # compare results
     if np.abs((actual - expected) / expected) < tol:
-        print("Passed!")
+        print(f"Passed, the expected value matches the actual value of {actual}!")
     else:
         print(f"Failed, expected: {expected}, actual: {actual}")
 
@@ -59,11 +59,11 @@ def angletest():
     """
 
     tol = 1.0e-8
-    ve_v0 = 2.0  # Please enter a value above 1.4 inclusive.
-    alpha = 0.3  # Please enter a positive value below 0.3 inclusive.
+    ve_v0 = 2.0  # Please enter a ratio value.
+    alpha = 0.3  # Please enter an alpha value.
 
     # what is this test doing
-    print(f"testing launch_angle with a ve_v0 of ({ve_v0}) and an alpha of ({alpha})...")
+    print(f"Testing launch_angle with a ve_v0 of ({ve_v0}) and an alpha of ({alpha})...")
 
     # expected output
     sin_phi = ((1 + alpha) * (np.sqrt(1 - (alpha / (1 + alpha)) * ve_v0 ** 2)))  # eq 17 step 1
@@ -74,7 +74,7 @@ def angletest():
 
     # compare results
     if np.abs((actual - expected) / expected) < tol:
-        print("Passed!")
+        print(f"Passed, the expected value matches the actual value of {actual}!")
     else:
         print(f"Failed, expected: {expected}, actual: {actual}")
 
@@ -92,12 +92,12 @@ def rangetest():
 
     """
 
-    ve_v0 = 2.0  # Please enter a value above 1.4 inclusive.
-    alpha = 0.25  # Please enter a positive value below 0.3 inclusive.
-    tol_alpha = 0.04 # Please enter a value before 0.1 inclusive.
+    ve_v0 = 2.0  # Please enter a ratio value.
+    alpha = 0.25  # Please enter an alpha value.
+    tol_alpha = 0.04  # Please enter the alpha tolerance.
 
     # what is this test doing
-    print(f"testing launch_angle_range with an alpha of ({alpha}) and a tol_alpha of ({tol_alpha})...")
+    print(f"Testing launch_angle_range with an alpha of ({alpha}) and a tol_alpha of ({tol_alpha})...")
 
     # expected output
     expected_list = []
@@ -112,9 +112,10 @@ def rangetest():
 
     # compare results
     if np.array_equal(actual_range, expected_range):
-        print("Passed!")
+        print(f"Passed, the expected range matches the actual range of {actual_range}!")
     else:
         print(f"Failed, expected: {expected_range}, actual: {actual_range}")
+
 
 if __name__ == "__main__":
     astest(), angletest(), rangetest()
