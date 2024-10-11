@@ -15,6 +15,18 @@ import math
 
 
 def arcsin(x):
+    """
+    Description of function:
+    -----
+
+    Parameter(s):
+    -----
+        x:
+
+    Return(s):
+    -----
+        result:
+    """
     if x < -1 or x > 1:
         raise ValueError(f"You have an invalid x value: {x}")
     # eq 18
@@ -36,12 +48,25 @@ def arcsin(x):
 
 
 def launch_angle(ve_v0, alpha):
+    """
+    Description of function:
+    -----
+
+    Parameter(s):
+    -----
+        ve_v0: the input ratio of the escape velocity to terminal velocity.
+        alpha: the desired maximum altitude as a fraction of Earth's radius.
+
+    Return(s):
+    -----
+        answer:
+    """
     if ve_v0 < 0 or alpha < 0:
-        raise ValueError(f"You have an invalid ratio or alpha value: {ve_v0}")
+        raise ValueError(f"You have an invalid ratio or alpha value.")
     # implementation of equations 17
     sin_phi = ((1 + alpha) * (np.sqrt(1 - (alpha / (1 + alpha)) * ve_v0**2)))  # eq 17 step 1
-    result = arcsin(sin_phi)
-    return result
+    answer = arcsin(sin_phi)
+    return answer
 
 
 def launch_angle_range(ve_v0, alpha, tol_alpha):
@@ -61,11 +86,12 @@ def launch_angle_range(ve_v0, alpha, tol_alpha):
     """
     array_list = []
 
-    one_plus = ((1 + tol_alpha) * alpha)  # minimum allowable launch angle and max alt. new alpha
+    one_plus = ((1 + tol_alpha) * alpha)  # minimum allowable launch angle at max altitude (new alpha)
     array_list.append(launch_angle(ve_v0, one_plus))
 
-    one_minus = ((1 - tol_alpha) * alpha)  # maximum allowable launch angle and min alt. new alpha
+    one_minus = ((1 - tol_alpha) * alpha)  # maximum allowable launch angle at max altitude (new alpha)
     array_list.append(launch_angle(ve_v0, one_minus))
 
     phi_range = np.array(array_list)
+
     return phi_range
