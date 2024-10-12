@@ -50,16 +50,16 @@ def launch_angle(ve_v0, alpha):
 
     Return(s):
     -----
-        answer: the launch angle.
+        arcsinphi: the launch angle.
 
     """
     if ve_v0 < 0 or alpha < 0:
         raise ValueError(f"You have an invalid ratio or alpha value.")
     # This is the implementation of equation 17 from the lab manual.
-    sin_phi = ((1 + alpha) * (np.sqrt(1 - (alpha / (1 + alpha)) * ve_v0**2)))
+    arcsinphi = ((1 + alpha) * (np.sqrt(1 - (alpha / (1 + alpha)) * ve_v0**2)))
     # Using the arcsin(x) function to compute the arcsin of sin_phi.
-    answer = arcsin(sin_phi)
-    return answer
+    arcsinphi = arcsin(arcsinphi)
+    return arcsinphi
 
 
 def launch_angle_range(ve_v0, alpha, tol_alpha):
