@@ -27,8 +27,8 @@ def main():
     alpha = 0.25  # Please input a value.
     tol_alpha = 0.04   # Please input a value.
 
-    # The Numpy linespace command creates an array with a specified amount of elements.
-    alpha_range = np.linspace(0.01, 0.04, 100)
+    # The Numpy linespace command creates an array with a specified amount of elements in a specific range.
+    alpha_range = np.linspace(0, 0.1, 100)
 
     # Now we create two empty lists. One will store the minimum angles, and the other the maximum.
     min_angles = []
