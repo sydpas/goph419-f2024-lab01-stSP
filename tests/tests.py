@@ -25,7 +25,7 @@ def astest():
     """
 
     tol = 1.0e-8  # Please enter the significant digit tolerance. The general tolerance is 1.0e-8.
-    x = 0.5  # Please input an x value between -1 and 1 (inclusive) to generate results that do not raise a ValueError.
+    x = 0  # Please input an x value between -1 and 1 (inclusive) to generate results that do not raise a ValueError.
 
     print(f"Testing arcsin({x})...")
 
