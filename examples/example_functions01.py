@@ -27,8 +27,8 @@ def main():
     plt.xlabel("Alpha (meters)")
     plt.ylabel("Launch angle (radians)")
 
-    plt.plot(alpha_range, min_angles, label = "Minimum angle", linewidth = 2, color = "green")  # Minimum angle.
-    plt.plot(alpha_range, max_angles, label = "Maximum angle", linewidth = 2, color = "purple")  # Maximum angle.
+    plt.plot(alpha_range, min_angles, label = "Minimum angle", linewidth = 2, color = "#495867")  # Minimum angle.
+    plt.plot(alpha_range, max_angles, label = "Maximum angle", linewidth = 2, color = "#c18c5d")  # Maximum angle.
     plt.legend(title = "Legend", alignment = "left")
     plt.title("Launch Angle as a Function of Altitude Relative to Earth's Radius")  # Y vs. x
     plt.savefig('C:\\Users\\sydne\\git\\goph419\\goph419-f2024-lab01-stSP\\figures\\launch_angle_vs_alpha.png')
