@@ -46,9 +46,9 @@ def main():
     plt.xlabel("Ve/V0 ratio")
     plt.ylabel("Launch angle (radians)")
     # Plotting the minimum ve_v0.
-    plt.plot(ve_v0_range, min_ve_v0, label="Minimum Ve/V0 ratio", linewidth=2, color="#495867")
+    plt.plot(ve_v0_range, min_ve_v0, label="Minimum Ve/V0 ratio", linewidth=2, color="#f67280")
     # Plotting the maximum ve_v0.
-    plt.plot(ve_v0_range, max_ve_v0, label="Maximum Ve/V0 ratio", linewidth=2, color="#c18c5d")
+    plt.plot(ve_v0_range, max_ve_v0, label="Maximum Ve/V0 ratio", linewidth=2, color="#6c5b7b")
     plt.legend(title="Legend", alignment="left")
     plt.title("Launch Angle as a Function of the Ratio of Escape Velocity to Terminal Velocity")
     plt.savefig('C:\\Users\\sydne\\git\\goph419\\goph419-f2024-lab01-stSP\\figures\\launch_angle_vs_ve_v0.png')
