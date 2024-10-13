@@ -31,7 +31,7 @@ def main():
     # First we will make x = ve_v0.
 
     # The Numpy linespace command creates an array with a specified amount of elements in a specific range.
-    ve_v0_range = np.linspace(1.4, 2, 100)
+    ve_v0_range = np.linspace(1.4, 2.0, 100)
 
     # Now we create two empty lists. One will store the minimum ve_v0, and the other the maximum.
     min_ve_v0 = []
@@ -39,16 +39,17 @@ def main():
 
     for ve_v0 in ve_v0_range:
         phi_range = launch_angle_range(ve_v0, alpha, tol_alpha)
-        min_ve_v0.append(phi_range[1])  # This will append the minimum value.
-        max_ve_v0.append(phi_range[0])  # This will append the maximum value.
+        min_ve_v0.append(phi_range[0])  # This will append the minimum value.
+        max_ve_v0.append(phi_range[1])  # This will append the maximum value.
 
     # Using the information above, we will create the plot.
+    plt.figure(figsize=(10,6))
     plt.xlabel("Ve/V0 ratio")
     plt.ylabel("Launch angle (radians)")
     # Plotting the minimum ve_v0.
-    plt.plot(ve_v0_range, min_ve_v0, label="Minimum Ve/V0 ratio", linewidth=2, color="#f67280")
+    plt.plot(ve_v0_range, min_ve_v0, label="Minimum Launch Angle", linewidth=2, color="#f67280")
     # Plotting the maximum ve_v0.
-    plt.plot(ve_v0_range, max_ve_v0, label="Maximum Ve/V0 ratio", linewidth=2, color="#6c5b7b")
+    plt.plot(ve_v0_range, max_ve_v0, label="Maximum Launch Angle", linewidth=2, color="#6c5b7b")
     plt.legend(title="Legend", alignment="left")
     plt.title("Launch Angle as a Function of the Ratio of Escape Velocity to Terminal Velocity")
     plt.savefig('C:\\Users\\sydne\\git\\goph419\\goph419-f2024-lab01-stSP\\figures\\launch_angle_vs_ve_v0.png')
@@ -65,18 +66,19 @@ def main():
 
     for alpha in alpha_range:
         phi_range = launch_angle_range(ve_v0, alpha, tol_alpha)
-        min_angles.append(phi_range[1])  # This will append the minimum value.
-        max_angles.append(phi_range[0])  # This will append the maximum value.
+        min_angles.append(phi_range[0])  # This will append the minimum value.
+        max_angles.append(phi_range[1])  # This will append the maximum value.
 
     # Using the information above, we will create the plot.
+    plt.figure(figsize=(10,6))
     plt.xlabel("Alpha (meters)")
     plt.ylabel("Launch angle (radians)")
     # Plotting the minimum angle.
-    plt.plot(alpha_range, min_angles, label = "Minimum angle", linewidth = 2, color = "#495867")
+    plt.plot(alpha_range, min_angles, label = "Minimum Launch Angle", linewidth = 2, color = "#495867")
     # Plotting the maximum angle.
-    plt.plot(alpha_range, max_angles, label = "Maximum angle", linewidth = 2, color = "#c18c5d")
+    plt.plot(alpha_range, max_angles, label = "Maximum Launch Angle", linewidth = 2, color = "#c18c5d")
     plt.legend(title = "Legend", alignment = "left")
-    plt.title("Launch Angle as a Function of Altitude Relative to Earth's Radius")
+    plt.title("Launch Angle as a Function of Maximum Altitude Relative to Earth's Radius")
     plt.savefig('C:\\Users\\sydne\\git\\goph419\\goph419-f2024-lab01-stSP\\figures\\launch_angle_vs_alpha.png')
     plt.show()
 
