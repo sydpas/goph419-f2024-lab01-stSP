@@ -24,7 +24,7 @@ def main():
 
     """
     ve_v0 = 2.0   # Please input a value.
-    alpha = 0.25  # Please input a value.
+    alpha = 0.25  # Please input a maximum altitude value.
     tol_alpha = 0.04   # Please input a value.
 
     # We need 2 graphs, one for x as alpha and one for x as ve_v0 to compare each to the launch angle.

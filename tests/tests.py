@@ -25,7 +25,7 @@ def astest():
     """
 
     tol = 1.0e-8  # Please enter the significant digit tolerance. The general tolerance is 1.0e-8.
-    x = 0  # Please input an x value between -1 and 1 (inclusive) to generate results that do not raise a ValueError.
+    x = 1  # Please input an x value between -1 and 1 (inclusive) to generate results that do not raise a ValueError.
 
     print(f"Testing arcsin({x})...")
 
@@ -61,12 +61,12 @@ def angletest():
 
     tol = 1.0e-8  # Please enter the significant digit tolerance. The general tolerance is 1.0e-8.
     ve_v0 = 2.0  # Please enter a ratio value.
-    alpha = 0.3  # Please enter an alpha value.
+    alpha = 0.25  # Please enter an alpha value.
 
     print(f"Testing launch_angle with a ve_v0 of ({ve_v0}) and an alpha of ({alpha})...")
 
     # Expected output.
-    sin_phi = ((1 + alpha) * (np.sqrt(1 - (alpha / (1 + alpha)) * ve_v0 ** 2)))  # eq 17 step 1
+    sin_phi = ((1 + alpha) * (np.sqrt(1 - (alpha / (1 + alpha)) * ve_v0 ** 2)))  # equation 17
     expected = np.asin(sin_phi)
 
     # Actual output.
@@ -98,7 +98,7 @@ def rangetest():
 
     ve_v0 = 2.0  # Please enter a ratio value.
     alpha = 0.25  # Please enter an alpha value.
-    tol_alpha = 0.04  # Please enter the alpha tolerance.
+    tol_alpha = 0.024 # Please enter the alpha tolerance.
 
     print(f"Testing launch_angle_range with an alpha of ({alpha}) and a tol_alpha of ({tol_alpha})...")
 
