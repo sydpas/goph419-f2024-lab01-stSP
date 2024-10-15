@@ -19,7 +19,6 @@ The launch angle range is then displayed on a graph in the driver.py file which 
 1. Open your preferred terminal on your local device.
 2. Navigate to the directory where the repository files will be stored. 
 3. To actually clone:
-   - If you have an SSH key setup on the device, use: git clone git@github.com:USER/goph419-f2024-lab01-stYY.git
-   - If you do not have an SSH key, use: git clone https://github.com/USER/goph419-f2024-lab01-st00.git
-   - If you have GitHub CLI, use: gh repo clone USER/goph419-f2024-lab01-stYY
-   - For all, replace USER with your username and YY with your initials.
+   - If you have an SSH key setup on the device, use: git clone git@github.com:sydpas/goph419-f2024-lab01-stSP.git
+   - If you do not have an SSH key, use: git clone https://github.com/sydpas/goph419-f2024-lab01-stSP.git
+   - If you have GitHub CLI, use: gh repo clone sydpas/goph419-f2024-lab01-stSP
